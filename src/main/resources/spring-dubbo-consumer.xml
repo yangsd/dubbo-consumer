@@ -8,12 +8,12 @@
 
     <dubbo:application name="jikexueyuan-dubbo-provider"/>
 
-    <dubbo:registry id="zk1" address="127.0.0.1:2181" protocol="zookeeper"/>
+    <dubbo:registry id="zk1" address="${dubbo.registry.address}" protocol="zookeeper"/>
 
     <dubbo:protocol id="mydubbo" name="dubbo" port="20886"/>
 
     <dubbo:consumer registry="zk1"/>
 
-    <dubbo:reference id="demo" interface="com.demo.service.Demo"/>
+    <dubbo:reference id="hello" interface="com.service.IHelloService"/>
 
 </beans>
